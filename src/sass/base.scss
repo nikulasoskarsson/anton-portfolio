@@ -1,0 +1,58 @@
+:root {
+  --color-gray-light: #bdbdbd;
+  --color-black: #222;
+}
+$bp-small: 35rem;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%; // 10xp = 1rem
+  color: var(--color-black);
+}
+.App {
+  display: grid;
+  grid-template-columns:
+    [full-start] 2.4rem[navigation-start] 1fr
+    [content-start]repeat(10, 1fr) [content-end] 1fr[navigation-end] 2.4rem
+    [full-end];
+  grid-template-rows:
+    [navbar-start]8.4rem [navbar-end header-start]100vh
+    [header-end portfolio-start] 100vh [portfolio-end resume-start] 100vh [resume-end contact-start] 100vh [contact-end] 8.4rem;
+  grid-column-gap: 2.4rem;
+}
+
+.scroll-position {
+  grid-column: navigation-start / content-start;
+  grid-row: 2 / -1;
+
+  &__content {
+    position: sticky;
+    top: 50%;
+    transform: translateY(-40%);
+
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    margin-bottom: 4.2rem;
+    row-gap: 1.2rem;
+  }
+
+  &__item {
+    height: 0.8rem;
+    width: 0.8rem;
+    border-radius: 50%;
+    background: var(--color-gray-light);
+    &-active {
+      background: var(--color-black);
+    }
+  }
+}
+
+.heading-h1 {
+  font-size: 4.8rem;
+}

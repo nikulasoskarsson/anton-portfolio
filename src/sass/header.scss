@@ -1,4 +1,8 @@
 .header {
-  height: 100vh;
-  background: green;
+  grid-row: header-start / header-end;
+  grid-column: content-start / content-end;
+
+  display: grid;
+  align-content: center;
+  margin-top: -8.4rem;
 }
