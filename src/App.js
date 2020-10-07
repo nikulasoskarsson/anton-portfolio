@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.scss';
 import Footer from './components/Footer';
 import ScrollPosition from './components/ScrollPosition';
