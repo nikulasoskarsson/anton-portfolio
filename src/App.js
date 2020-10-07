@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Prismic from 'prismic-javascript';
 import './App.scss';
-import Footer from './components/Footer';
+
 import ScrollPosition from './components/ScrollPosition';
 import Header from './components/sections/header/Header';
 import Navbar from './components/sections/header/Navbar';
@@ -36,7 +36,9 @@ function App() {
   };
 
   useEffect(() => {
-    !portfolioItems.length && getPortfolioItems();
+    if (!portfolioItems) {
+      getPortfolioItems();
+    }
   }, [portfolioItems]);
 
   // const updateScrollPosition = () => console.log('scrolled');
@@ -56,8 +58,6 @@ function App() {
       <Portfolio portfolioItems={portfolioItems} />
       <Resume resume={resume} />
       <Contact />
-
-      {/* <Footer /> */}
     </div>
   );
 }
