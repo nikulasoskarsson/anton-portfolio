@@ -8,6 +8,7 @@ import Navbar from './components/sections/header/Navbar';
 import Portfolio from './components/sections/portfolio';
 import Resume from './components/sections/resume';
 import Contact from './components/sections/contact';
+import Footer from './components/Footer';
 
 function App() {
   const apiEndpoint = 'https://anton-portfolio.cdn.prismic.io/api/v2';
@@ -24,6 +25,7 @@ function App() {
         })
         .then(
           function (response) {
+            console.log(response.results[2]);
             setPortfolioItems(response.results[2].data.portfolio_item);
             setResume({
               ...resume,
@@ -54,6 +56,7 @@ function App() {
       <Portfolio portfolioItems={portfolioItems} />
       <Resume resume={resume} />
       <Contact />
+      <Footer />
     </div>
   );
 }

@@ -1,8 +1,23 @@
 .footer {
-  grid-column: full-start / full-end;
+  grid-column: navigation-start / navigation-end;
   grid-row: footer-start / footer-end;
 
-  position: sticky;
-  top: 0;
-  height: 8.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+  background: violet;
+  // position: sticky;
+  // bottom: 0;
+
+  @media only screen and(max-width:$bp-small) {
+    grid-column: full-start / full-end;
+
+    justify-content: center;
+  }
+
+  &__text {
+    font-size: 1.3rem;
+    font-weight: 400;
+  }
 }

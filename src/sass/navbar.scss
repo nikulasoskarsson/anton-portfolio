@@ -110,3 +110,13 @@
     display: none;
   }
 }
+
+.button {
+  text-decoration: none;
+  color: #fff;
+  background: var(--color-black);
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}

@@ -2,4 +2,8 @@
   grid-row: contact-start / contact-end;
   grid-column: content-start / content-end;
   background: orangered;
+
+  @media only screen and (max-width: $bp-small) {
+    grid-column: full-start / full-end;
+  }
 }
