@@ -35,9 +35,10 @@ function App() {
       );
   };
 
+  // eslint-disable-next
   useEffect(() => {
-    getPortfolioItems();
-  }, [getPortfolioItems]);
+    !portfolioItems.length && getPortfolioItems();
+  }, [portfolioItems]);
 
   // const updateScrollPosition = () => console.log('scrolled');
   // const [activeSection, setActiveSection] = useState(1);
