@@ -15,29 +15,26 @@ function App() {
   const [portfolioItems, setPortfolioItems] = useState([]);
   const [resume, setResume] = useState({});
 
-  const getPortfolioItems = () => {
-    Prismic.getApi(apiEndpoint)
-      .then(function (api) {
-        return api.query(''); // An empty query will return all the documents
-      })
-      .then(
-        function (response) {
-          setPortfolioItems(response.results[2].data.portfolio_item);
-          setResume({
-            ...resume,
-            img: response.results[2].data.resume_image,
-            link: response.results[2].data.resume_link,
-          });
-        },
-        function (err) {
-          console.log('Something went wrong: ', err);
-        }
-      );
-  };
-
   // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
-    !portfolioItems.length && getPortfolioItems();
+    !portfolioItems.length &&
+      Prismic.getApi(apiEndpoint)
+        .then(function (api) {
+          return api.query(''); // An empty query will return all the documents
+        })
+        .then(
+          function (response) {
+            setPortfolioItems(response.results[2].data.portfolio_item);
+            setResume({
+              ...resume,
+              img: response.results[2].data.resume_image,
+              link: response.results[2].data.resume_link,
+            });
+          },
+          function (err) {
+            console.log('Something went wrong: ', err);
+          }
+        );
   }, [portfolioItems]);
 
   // const updateScrollPosition = () => console.log('scrolled');
