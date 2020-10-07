@@ -35,7 +35,7 @@ function App() {
       );
   };
 
-  // eslint-disable-next-line
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     !portfolioItems.length && getPortfolioItems();
   }, [portfolioItems]);
