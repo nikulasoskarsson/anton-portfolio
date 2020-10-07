@@ -35,7 +35,7 @@ function App() {
       );
   };
 
-  // eslint-disable-next
+  // eslint-disable-next-line
   useEffect(() => {
     !portfolioItems.length && getPortfolioItems();
   }, [portfolioItems]);
