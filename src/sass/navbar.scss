@@ -6,7 +6,11 @@
   top: 0;
   grid-row: navbar-start / navbar-end;
   grid-column: navigation-start / navigation-end;
+
   transition: height 0.3s;
+  @media only screen and (max-width: 600px) {
+    grid-column: full-start / full-end;
+  }
   &-active {
     @media only screen and(max-width:600px) {
       height: 100vh;
@@ -16,6 +20,7 @@
 
   &__content {
     height: 100%;
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -64,6 +69,7 @@
     cursor: pointer;
     padding: 1rem;
     align-self: flex-start;
+
     margin-top: 2.4rem;
     &-bar {
       width: 20px;

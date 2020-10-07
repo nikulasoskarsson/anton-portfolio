@@ -1,4 +1,31 @@
 .portfolio {
-  grid-column: portfolio-start / portfolio-end;
-  grid-row: content-start / content-end;
+  grid-column: content-start / content-end;
+  grid-row: portfolio-start / portfolio-end;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media only screen and (max-width: $bp-small) {
+    align-items: start;
+    flex-direction: column;
+    justify-content: flex-start;
+    grid-column: navigation-start / navigation-end;
+  }
+}
+
+.project {
+  margin: 0 1.5rem;
+
+  @media only screen and (max-width: $bp-small) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__image {
+    height: 28rem;
+    width: 26rem;
+
+    border: 10px solid #f4f4f4;
+  }
 }

@@ -1,0 +1,8 @@
+.footer {
+  grid-column: full-start / full-end;
+  grid-row: footer-start / footer-end;
+
+  position: sticky;
+  top: 0;
+  height: 8.4rem;
+}

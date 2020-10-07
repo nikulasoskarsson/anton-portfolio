@@ -2,7 +2,7 @@ import React from 'react';
 
 const ScrollPosition = ({ activeSection }) => {
   return (
-    <div className='scroll-position'>
+    <div className='scroll-position display-hidden-sm'>
       <div className='scroll-position__content'>
         <div
           className={
