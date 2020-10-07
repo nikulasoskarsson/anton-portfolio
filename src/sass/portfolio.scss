@@ -1,7 +1,7 @@
 .portfolio {
   grid-column: content-start / content-end;
   grid-row: portfolio-start / portfolio-end;
-
+  background: blue;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -10,7 +10,14 @@
     align-items: start;
     flex-direction: column;
     justify-content: flex-start;
-    grid-column: navigation-start / navigation-end;
+    grid-column: full-start / full-end;
+    margin-top: -8.4rem;
+  }
+  h1 {
+    @media only screen and (max-width: $bp-small) {
+      padding-top: 8.4rem;
+      padding-bottom: 4rem;
+    }
   }
 }
 
@@ -18,14 +25,15 @@
   margin: 0 1.5rem;
 
   @media only screen and (max-width: $bp-small) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    align-self: center;
   }
   &__image {
     height: 28rem;
     width: 26rem;
-
+    @media only screen and (max-width: $bp-small) {
+      height: 32rem;
+      width: 36rem;
+    }
     border: 10px solid #f4f4f4;
   }
 }

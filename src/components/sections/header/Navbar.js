@@ -8,7 +8,7 @@ const Navbar = () => {
   return (
     <nav className={!navActive ? 'navbar' : 'navbar navbar-active'}>
       <div className='navbar__content'>
-        <img src={require('./logo.png')} alt='Logo' className='navbar__logo' />
+        <img src={require('./logo.svg')} alt='Logo' className='navbar__logo' />
 
         <ul
           className={
@@ -16,7 +16,7 @@ const Navbar = () => {
           }
         >
           <li className='navbar__list-item'>
-            <a href='#later' className='navbar__link navbar__link-active'>
+            <a href='#header' className='navbar__link navbar__link-active'>
               About me
             </a>
           </li>
@@ -26,12 +26,12 @@ const Navbar = () => {
             </a>
           </li>
           <li className='navbar__list-item'>
-            <a href='#later' className='navbar__link'>
+            <a href='#resume' className='navbar__link'>
               Resume
             </a>
           </li>
           <li className='navbar__list-item'>
-            <a href='#later' className='navbar__link'>
+            <a href='#contact' className='navbar__link'>
               Contact
             </a>
           </li>

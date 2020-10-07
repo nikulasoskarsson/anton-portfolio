@@ -21,9 +21,17 @@ html {
     [content-start]repeat(10, 1fr) [content-end] 1fr[navigation-end] 2.4rem
     [full-end];
   grid-template-rows:
-    [navbar-start]8.4rem [navbar-end header-start]100vh [header-end footer-start] 8.4rem
-    [footer-end portfolio-start] 100vh [portfolio-end resume-start] 100vh [resume-end contact-start] 100vh [contact-end] 8.4rem;
+    [navbar-start]8.4rem [navbar-end header-start]100vh
+    [header-end portfolio-start] 100vh [portfolio-end resume-start] 100vh [resume-end contact-start] 100vh [contact-end] 8.4rem;
   grid-column-gap: 2.4rem;
+
+  @media only screen and (max-width: $bp-small) {
+    padding: 0 2rem;
+
+    grid-template-rows:
+      [navbar-start]8.4rem [navbar-end header-start]100vh
+      [header-end portfolio-start] min-content [portfolio-end resume-start] min-content [resume-end contact-start] 100vh [contact-end] 8.4rem;
+  }
 }
 
 .scroll-position {
