@@ -36,10 +36,8 @@ function App() {
   };
 
   useEffect(() => {
-    if (!portfolioItems) {
-      getPortfolioItems();
-    }
-  }, [portfolioItems]);
+    !portfolioItems.length && getPortfolioItems();
+  }, [portfolioItems, getPortfolioItems]);
 
   // const updateScrollPosition = () => console.log('scrolled');
   // const [activeSection, setActiveSection] = useState(1);
