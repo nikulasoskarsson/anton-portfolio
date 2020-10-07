@@ -37,7 +37,7 @@ function App() {
 
   useEffect(() => {
     getPortfolioItems();
-  }, []);
+  }, [getPortfolioItems]);
 
   // const updateScrollPosition = () => console.log('scrolled');
   // const [activeSection, setActiveSection] = useState(1);
