@@ -35,7 +35,7 @@ function App() {
             console.log('Something went wrong: ', err);
           }
         );
-  }, [portfolioItems]);
+  }, [portfolioItems, resume]);
 
   // const updateScrollPosition = () => console.log('scrolled');
   // const [activeSection, setActiveSection] = useState(1);
