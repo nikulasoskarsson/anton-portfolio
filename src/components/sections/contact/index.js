@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import IconRight from './IconRight';
 
 const Contact = () => {
-  const [formData, setFormData] = useState([
+  const [formData] = useState([
     {
       label: 'What is your name?',
       for: 'name',
