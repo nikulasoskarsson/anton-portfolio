@@ -1,7 +1,7 @@
 .portfolio {
   grid-column: content-start / content-end;
   grid-row: portfolio-start / portfolio-end;
-  background: blue;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34,6 +34,6 @@
       height: 32rem;
       width: 36rem;
     }
-    border: 10px solid #f4f4f4;
+    box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.1);
   }
 }

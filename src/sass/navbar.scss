@@ -9,6 +9,8 @@
   grid-column: navigation-start / navigation-end;
 
   transition: height 0.3s;
+  z-index: 60000;
+
   @media only screen and (max-width: 600px) {
     grid-column: full-start / full-end;
   }
@@ -54,6 +56,7 @@
     }
   }
   &__link {
+    font-weight: 600;
     font-size: 1.6rem;
     color: var(--color-gray-light);
     text-decoration: none;
@@ -115,8 +118,14 @@
   text-decoration: none;
   color: #fff;
   background: var(--color-black);
-  border-radius: 0.5rem;
-  padding: 1rem 2rem;
+  border-radius: 0.3rem;
+  padding: 1rem 2.2rem;
   font-size: 1.6rem;
-  font-weight: 700;
+  font-weight: 600;
+
+  @media only screen and (max-width: $bp-small) {
+    position: absolute;
+    bottom: -6rem;
+    right: 2rem;
+  }
 }
