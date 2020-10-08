@@ -38,7 +38,6 @@ const Contact = () => {
         name='contact-us'
         method='POST'
         data-netlify='true'
-        action='/contact-success.html'
       >
         <input type='hidden' value='contact-us' name='form-name' />
         <label className='contact__label' htmlFor={'input'}>
