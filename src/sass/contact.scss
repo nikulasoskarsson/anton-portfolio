@@ -1,7 +1,51 @@
 .contact {
   grid-row: contact-start / contact-end;
   grid-column: content-start / content-end;
-  background: orangered;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    width: 60%;
+  }
+
+  &__form {
+    width: 40rem;
+    position: relative;
+  }
+  &__label,
+  &__label {
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-gray-light);
+
+    display: flex;
+    justify-content: space-between;
+  }
+  &__border,
+  &__border:focus {
+    outline: none;
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid var(--color-black);
+    padding-top: 1.4rem;
+  }
+
+  &__form-placement {
+    font-size: 1.3rem;
+    float: right;
+    padding-top: 0.4rem;
+  }
+
+  .button {
+    text-transform: uppercase;
+    width: 100%;
+    position: absolute;
+    bottom: -5rem;
+    left: 0;
+  }
 
   @media only screen and (max-width: $bp-small) {
     grid-column: full-start / full-end;
