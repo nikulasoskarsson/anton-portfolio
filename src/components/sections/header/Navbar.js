@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import Scrollspy from 'react-scrollspy';
 
-const Navbar = () => {
+const Navbar = ({ activeSection, setActiveSection }) => {
   const [navActive, setNavActive] = useState(false);
 
   const toggleNav = () => setNavActive(!navActive);
@@ -15,26 +16,70 @@ const Navbar = () => {
             !navActive ? 'navbar__list display-hidden-sm' : 'navbar__list'
           }
         >
-          <li className='navbar__list-item'>
-            <a href='#header' className='navbar__link navbar__link-active'>
-              About me
-            </a>
-          </li>
-          <li className='navbar__list-item'>
-            <a href='#portfolio' className='navbar__link'>
-              Projects
-            </a>
-          </li>
-          <li className='navbar__list-item'>
-            <a href='#resume' className='navbar__link'>
-              Resume
-            </a>
-          </li>
-          <li className='navbar__list-item'>
-            <a href='#contact' className='navbar__link'>
-              Contact
-            </a>
-          </li>
+          <Scrollspy
+            items={['header', 'portfolio', 'resume', 'contact']}
+            onUpdate={(section) => {
+              if (section.id === 'header') {
+                setActiveSection(1);
+              } else if (section.id === 'portfolio') {
+                setActiveSection(2);
+              } else if (section.id === 'resume') {
+                setActiveSection(3);
+              } else {
+                setActiveSection(4);
+              }
+            }}
+            style={{ display: 'flex' }}
+          >
+            <li className='navbar__list-item'>
+              <a
+                href='#header'
+                className={
+                  activeSection === 1
+                    ? 'navbar__link navbar__link-active'
+                    : 'navbar__link'
+                }
+              >
+                About me
+              </a>
+            </li>
+            <li className='navbar__list-item'>
+              <a
+                href='#portfolio'
+                className={
+                  activeSection === 2
+                    ? 'navbar__link navbar__link-active'
+                    : 'navbar__link'
+                }
+              >
+                Projects
+              </a>
+            </li>
+            <li className='navbar__list-item'>
+              <a
+                href='#resume'
+                className={
+                  activeSection === 3
+                    ? 'navbar__link navbar__link-active'
+                    : 'navbar__link'
+                }
+              >
+                Resume
+              </a>
+            </li>
+            <li className='navbar__list-item'>
+              <a
+                href='#contact'
+                className={
+                  activeSection === 4
+                    ? 'navbar__link navbar__link-active'
+                    : 'navbar__link'
+                }
+              >
+                Contact
+              </a>
+            </li>
+          </Scrollspy>
         </ul>
         <div
           className={

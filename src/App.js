@@ -39,19 +39,18 @@ function App() {
         );
   }, [portfolioItems, resume]);
 
-  // const updateScrollPosition = () => console.log('scrolled');
-  // const [activeSection, setActiveSection] = useState(1);
-
-  // document.addEventListener('scroll', () => {
-  //   if (document.body.getBoundingClientRect().top < -300) {
-  //     setActiveSection(2);
-  //   }
-  // });
+  const [activeSection, setActiveSection] = useState(1);
 
   return (
     <div className='App'>
-      <Navbar />
-      <ScrollPosition activeSection={1} />
+      <Navbar
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+      />
+      <ScrollPosition
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+      />
       <Header />
       <Portfolio portfolioItems={portfolioItems} />
       <Resume resume={resume} />

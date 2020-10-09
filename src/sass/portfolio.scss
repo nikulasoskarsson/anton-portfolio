@@ -6,6 +6,18 @@
   align-items: center;
   justify-content: space-between;
 
+  &__container {
+    display: flex;
+
+    @media only screen and (max-width: $bp-medium) {
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+
+      gap: 2rem;
+    }
+  }
+
   @media only screen and (max-width: $bp-small) {
     align-items: start;
     flex-direction: column;
@@ -24,12 +36,25 @@
 .project {
   margin: 0 1.5rem;
 
-  @media only screen and (max-width: $bp-small) {
-    align-self: center;
+  @media only screen and (max-width: $bp-large) {
+    margin: 0 0.5rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
   }
   &__image {
-    height: 28rem;
-    width: 26rem;
+    height: auto;
+    width: 24rem;
+
+    @media only screen and (max-width: $bp-large) {
+      width: 18rem;
+    }
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 60%;
+      float: right;
+    }
+
     @media only screen and (max-width: $bp-small) {
       height: 32rem;
       width: 36rem;

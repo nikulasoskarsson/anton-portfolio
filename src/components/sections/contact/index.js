@@ -27,6 +27,46 @@ const Contact = () => {
 
   const [formPlacement, setFormPlacement] = useState(0);
 
+  const [error, setError] = useState(null);
+
+  const handleFormChange = () => {
+    const formField = formData[formPlacement].for;
+
+    const text = document.getElementById(formField).value;
+
+    if (formField === 'name') {
+      if (text.length >= 3) {
+        setFormPlacement(formPlacement + 1);
+        setError(null);
+      } else {
+        setError('Name must be at lest 3 Characters');
+      }
+    } else if (formField === 'email') {
+      console.log('email');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) {
+        setError('Not a valid email address');
+      } else {
+        setFormPlacement(formPlacement + 1);
+        setError(null);
+      }
+    } else if (formField === 'subject') {
+      if (text.length > 3) {
+        setFormPlacement(formPlacement + 1);
+        setError(null);
+      } else {
+        setError('Subject must be at lest 3 Characters');
+      }
+    }
+    //  else {
+    //   if (text.length > 12) {
+    //     setFormPlacement(formPlacement + 1);
+    //     setError(null);
+    //   } else {
+    //     setError('Message must be at lest 12 Characters');
+    //   }
+    // }
+  };
+
   return (
     <div className='contact' id='contact'>
       <h1 className='heading-h1'>
@@ -43,7 +83,7 @@ const Contact = () => {
         <label className='contact__label' htmlFor={'input'}>
           {formData[formPlacement].label}
           {formPlacement < 3 && (
-            <div onClick={() => setFormPlacement(formPlacement + 1)}>
+            <div onClick={handleFormChange}>
               <IconRight />
             </div>
           )}
@@ -89,7 +129,7 @@ const Contact = () => {
               : 'display-hidden'
           }
         />
-
+        {error && <p className='contact__error'>{error}</p>}
         <p className='contact__form-placement'>
           {formData[formPlacement].placement} / 4
         </p>

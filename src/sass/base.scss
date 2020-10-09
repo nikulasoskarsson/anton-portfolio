@@ -4,7 +4,10 @@
   --color-gray-light: #bdbdbd;
   --color-black: #222;
 }
-$bp-small: 60rem;
+$bp-large: 75em; // 1200 px
+$bp-medium: 56.25em; // 800px
+$bp-small: 37.5em; // 600px
+$bp-smallest: 25em; // 400px
 
 * {
   margin: 0;
@@ -28,7 +31,7 @@ html {
     [content-start]repeat(10, 1fr) [content-end] 1fr[navigation-end] 2.4rem
     [full-end];
   grid-template-rows:
-    [navbar-start]8.4rem [navbar-end header-start]100vh
+    [navbar-start]8.4rem [navbar-end header-start]calc(100vh - 8.4rem)
     [header-end portfolio-start] 100vh [portfolio-end resume-start] 100vh [resume-end contact-start] 100vh [contact-end footer-start] 4.2rem[footer-end];
   grid-column-gap: 2.4rem;
 
@@ -72,6 +75,10 @@ html {
 .heading-h1 {
   font-size: 4.8rem;
   width: 90%;
+
+  @media only screen and (max-width: $bp-large) {
+    font-size: 3.6rem;
+  }
 }
 
 .display-hidden {

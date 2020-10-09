@@ -2,7 +2,6 @@ import React from 'react';
 
 const Resume = ({ resume }) => {
   if (resume.img) {
-    console.log(resume);
     return (
       <div className='resume' id='resume'>
         <div className='resume__left'>
