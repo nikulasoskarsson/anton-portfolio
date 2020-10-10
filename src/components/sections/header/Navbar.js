@@ -12,7 +12,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         <img src={require('./logo.svg')} alt='Logo' className='navbar__logo' />
         <Scrollspy
             items={['header', 'portfolio', 'resume', 'contact']}
-            offset={ -80 }
+            offset={ 80.4 }
             onUpdate={(section) => {
               if (section.id === 'header') {
                 setActiveSection(1);
@@ -32,7 +32,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
           }
         >
          
-            <li className='navbar__list-item'>
+            <li className='navbar__list-item' onClick={toggleNav}>
               <a
                 href='#header'
                 className={
@@ -44,7 +44,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 About me
               </a>
             </li>
-            <li className='navbar__list-item'>
+            <li className='navbar__list-item' onClick={toggleNav}>
               <a
                 href='#portfolio'
                 className={
@@ -56,7 +56,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 Projects
               </a>
             </li>
-            <li className='navbar__list-item'>
+            <li className='navbar__list-item' onClick={toggleNav}>
               <a
                 href='#resume'
                 className={
@@ -68,7 +68,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 Resume
               </a>
             </li>
-            <li className='navbar__list-item'>
+            <li className='navbar__list-item' onClick={toggleNav}>
               <a
                 href='#contact'
                 className={

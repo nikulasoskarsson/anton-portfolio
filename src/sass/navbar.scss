@@ -67,6 +67,9 @@
     &-active {
       color: var(--color-black);
     }
+    &:hover {
+      color: var(--color-black);
+    }
   }
   .navbar__icon {
     cursor: pointer;
