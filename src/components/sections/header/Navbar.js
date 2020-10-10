@@ -10,14 +10,9 @@ const Navbar = ({ activeSection, setActiveSection }) => {
     <nav className={!navActive ? 'navbar' : 'navbar navbar-active'}>
       <div className='navbar__content'>
         <img src={require('./logo.svg')} alt='Logo' className='navbar__logo' />
-
-        <ul
-          className={
-            !navActive ? 'navbar__list display-hidden-sm' : 'navbar__list'
-          }
-        >
-          <Scrollspy
+        <Scrollspy
             items={['header', 'portfolio', 'resume', 'contact']}
+            offset={ -80 }
             onUpdate={(section) => {
               if (section.id === 'header') {
                 setActiveSection(1);
@@ -29,8 +24,14 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 setActiveSection(4);
               }
             }}
-            style={{ display: 'flex' }}
+           
           >
+        <ul
+          className={
+            !navActive ? 'navbar__list display-hidden-sm' : 'navbar__list'
+          }
+        >
+         
             <li className='navbar__list-item'>
               <a
                 href='#header'
@@ -79,8 +80,9 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 Contact
               </a>
             </li>
-          </Scrollspy>
+          
         </ul>
+        </Scrollspy>
         <div
           className={
             !navActive

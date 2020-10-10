@@ -42,7 +42,7 @@ const Contact = () => {
         setError('Name must be at lest 3 Characters');
       }
     } else if (formField === 'email') {
-      console.log('email');
+      
       if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(text)) {
         setError('Not a valid email address');
       } else {
@@ -80,7 +80,7 @@ const Contact = () => {
         data-netlify='true'
       >
         <input type='hidden' value='contact-us' name='form-name' />
-        <label className='contact__label' htmlFor={'input'}>
+        <label className='contact__label' htmlFor={formData[formPlacement].for}>
           {formData[formPlacement].label}
           {formPlacement < 3 && (
             <div onClick={handleFormChange}>

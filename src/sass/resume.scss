@@ -12,13 +12,13 @@
   }
 
   &__left {
+    width: 60%;
+    @media only screen and (max-width: $bp-small) {
+      width: 80%;
+    }
     h1 {
-      width: 60%;
+      width: 100%;
       padding-bottom: 3rem;
-      @media only screen and (max-width: $bp-small) {
-        padding-top: 4rem;
-        width: 80%;
-      }
     }
   }
   &__right {

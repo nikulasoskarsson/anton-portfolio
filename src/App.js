@@ -25,7 +25,6 @@ function App() {
         })
         .then(
           function (response) {
-            console.log(response.results[2]);
             setPortfolioItems(response.results[2].data.portfolio_item);
             setResume({
               ...resume,
