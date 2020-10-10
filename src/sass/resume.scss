@@ -15,6 +15,7 @@
     width: 60%;
     @media only screen and (max-width: $bp-small) {
       width: 80%;
+      align-self: flex-start;
     }
     h1 {
       width: 100%;

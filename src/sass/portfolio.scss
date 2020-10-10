@@ -8,6 +8,7 @@
 
   &__container {
     display: flex;
+    position: relative;
 
     @media only screen and (max-width: $bp-medium) {
       flex-wrap: wrap;
@@ -31,6 +32,20 @@
       padding-bottom: 4rem;
     }
   }
+
+  &__button {
+    transform: rotate(90deg);
+    position: absolute;
+    right: -6rem;
+    bottom: 2rem;
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
 }
 
 .project {
@@ -45,7 +60,8 @@
   @media only screen and (max-width: $bp-medium) {
   }
   &__image {
-    height: auto;
+    object-fit: cover;
+    height: 28rem;
     width: 24rem;
 
     @media only screen and (max-width: $bp-large) {

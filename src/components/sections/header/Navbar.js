@@ -12,7 +12,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         <img src={require('./logo.svg')} alt='Logo' className='navbar__logo' />
         <Scrollspy
             items={['header', 'portfolio', 'resume', 'contact']}
-            offset={ 80.4 }
+            offset={ -80.4 }
             onUpdate={(section) => {
               if (section.id === 'header') {
                 setActiveSection(1);
