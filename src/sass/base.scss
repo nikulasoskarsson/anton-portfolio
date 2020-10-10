@@ -24,6 +24,9 @@ html {
     font-size: 50%;
   }
 }
+body::-webkit-scrollbar {
+  display: none;
+}
 .App {
   display: grid;
   grid-template-columns:
