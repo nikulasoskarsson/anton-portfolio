@@ -35,7 +35,7 @@ body::-webkit-scrollbar {
     [full-end];
   grid-template-rows:
     [navbar-start]8.4rem [navbar-end header-start]calc(100vh - 8.4rem)
-    [header-end portfolio-start] 100vh [portfolio-end resume-start] 100vh [resume-end contact-start] 100vh [contact-end footer-start] 4.2rem[footer-end];
+    [header-end portfolio-start] 100vh [portfolio-end resume-start] 100vh [resume-end contact-start] 100vh [contact-end];
   grid-column-gap: 2.4rem;
 
   @media only screen and (max-width: $bp-small) {

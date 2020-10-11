@@ -14,8 +14,9 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             items={['header', 'portfolio', 'resume', 'contact']}
             offset={ -80.4 }
             onUpdate={(section) => {
+            if(typeof(section)  !== "undefined"){
               if (section.id === 'header') {
-                setActiveSection(1);
+             setActiveSection(1);
               } else if (section.id === 'portfolio') {
                 setActiveSection(2);
               } else if (section.id === 'resume') {
@@ -23,7 +24,8 @@ const Navbar = ({ activeSection, setActiveSection }) => {
               } else {
                 setActiveSection(4);
               }
-            }}
+            }
+               }}
            
           >
         <ul

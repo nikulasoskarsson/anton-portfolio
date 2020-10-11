@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Prismic from 'prismic-javascript';
+
+
 import './App.scss';
 
 import ScrollPosition from './components/ScrollPosition';
@@ -40,8 +42,10 @@ function App() {
 
   const [activeSection, setActiveSection] = useState(1);
 
+  document.addEventListener('scroll',(e) =>console.log(e))
+
   return (
-    <div className='App'>
+    <div className='App' >
       <Navbar
         activeSection={activeSection}
         setActiveSection={setActiveSection}
@@ -50,8 +54,12 @@ function App() {
         activeSection={activeSection}
         setActiveSection={setActiveSection}
       />
+      
       <Header />
+    
       <Portfolio portfolioItems={portfolioItems} />
+
+      
       <Resume resume={resume} />
       <Contact />
       <Footer />

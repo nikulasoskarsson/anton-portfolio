@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import DribbleIcon from './DribbleIcon';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import PortfolioItem from './PortfolioItem';
 
@@ -10,8 +11,12 @@ const Portfolio = ({ portfolioItems }) => {
   
   return (
     <div className='portfolio' id='portfolio'>
-      <h1 className='heading-h1'>Projects</h1>
-      <div className='portfolio__container'>
+    <ScrollAnimation  animateIn="fadeIn">
+    <h1 className='heading-h1'>Projects</h1>
+ 
+ </ScrollAnimation>
+      
+      <ScrollAnimation animateIn="fadeIn" delay={500} className='portfolio__container'>
         {portfolioItems.length ? (
           portfolioItems.map((item, index) => index <= 2 && (
             <PortfolioItem key={index} item={item} />
@@ -20,7 +25,8 @@ const Portfolio = ({ portfolioItems }) => {
           <div>Not working</div>
         )}
         <div onClick={toggleExpandSection}className="portfolio__button">See More <DribbleIcon /></div>
-      </div>
+   
+      </ScrollAnimation>
      
     </div>
   );

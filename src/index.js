@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.StrictMode  onScroll={() => console.log('scrolled')}>
     <App />
   </React.StrictMode>,
   document.getElementById('root')

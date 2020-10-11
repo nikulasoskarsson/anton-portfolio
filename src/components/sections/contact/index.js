@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import IconRight from './IconRight';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const Contact = () => {
   const [formData] = useState([
@@ -57,21 +58,17 @@ const Contact = () => {
         setError('Subject must be at lest 3 Characters');
       }
     }
-    //  else {
-    //   if (text.length > 12) {
-    //     setFormPlacement(formPlacement + 1);
-    //     setError(null);
-    //   } else {
-    //     setError('Message must be at lest 12 Characters');
-    //   }
-    // }
+   
   };
 
   return (
     <div className='contact' id='contact'>
+      <ScrollAnimation animateIn='fadeIn'>
       <h1 className='heading-h1'>
         Got a project, or do you just want to say hi?
       </h1>
+      </ScrollAnimation>
+      <ScrollAnimation animateIn='fadeIn' delay={500}>
       <form
         className='contact__form'
         id='contact-form'
@@ -135,6 +132,7 @@ const Contact = () => {
         </p>
         {formPlacement === 3 && <button class='button'>Send</button>}
       </form>
+      </ScrollAnimation>
     </div>
   );
 };
