@@ -1,35 +1,53 @@
-import React,{useState} from 'react';
-import DribbleIcon from './DribbleIcon';
-import ScrollAnimation from 'react-animate-on-scroll';
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import DribbleIcon from './DribbleIcon'
+import ScrollAnimation from 'react-animate-on-scroll'
 
-import PortfolioItem from './PortfolioItem';
+import PortfolioItem from './PortfolioItem'
 
 const Portfolio = ({ portfolioItems }) => {
+  const [isExpanded, setIsExpanded] = useState(false)
+  const toggleExpandSection = () => setIsExpanded(!isExpanded)
 
-  const [isExpanded, setIsExpanded] = useState(false);
-  const toggleExpandSection = () =>setIsExpanded(!isExpanded);
-  
+  let animationsDelay = 800
+
   return (
-    <div className='portfolio' id='portfolio'>
-    <ScrollAnimation  animateIn="fadeIn">
-    <h1 className='heading-h1'>Projects</h1>
- 
- </ScrollAnimation>
-      
-      <ScrollAnimation animateIn="fadeIn" delay={500} className='portfolio__container'>
+    <div className='portfolio section' id='portfolio'>
+      <h1 className='heading-h1'>
+        <ScrollAnimation animateIn='fadeIn'>Projects </ScrollAnimation>
+      </h1>
+      <div className='portfolio__container'>
         {portfolioItems.length ? (
-          portfolioItems.map((item, index) => index <= 2 && (
-            <PortfolioItem key={index} item={item} />
-          ))
+          portfolioItems.map((item, index) => {
+            if (index <= 2) {
+              animationsDelay = animationsDelay - 150
+              return (
+                <ScrollAnimation
+                  style={{ display: 'inline' }}
+                  animateIn='fadeIn'
+                  delay={animationsDelay}
+                >
+                  <PortfolioItem key={index} item={item} />
+                </ScrollAnimation>
+              )
+            }
+          })
         ) : (
-          <div>Not working</div>
+          <div>...</div>
         )}
-        <div onClick={toggleExpandSection}className="portfolio__button">See More <DribbleIcon /></div>
-   
-      </ScrollAnimation>
-     
+        <ScrollAnimation
+          animateIn='fadeIn'
+          delay={1000}
+          onClick={toggleExpandSection}
+          className='portfolio__button'
+        >
+          <Link to='/portfolio'>
+            See more <DribbleIcon />
+          </Link>
+        </ScrollAnimation>
+      </div>
     </div>
-  );
-};
+  )
+}
 
-export default Portfolio;
+export default Portfolio

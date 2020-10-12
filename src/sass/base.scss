@@ -27,6 +27,10 @@ html {
 body::-webkit-scrollbar {
   display: none;
 }
+body::selection {
+  background: pink;
+  color: yellow;
+}
 .App {
   display: grid;
   grid-template-columns:

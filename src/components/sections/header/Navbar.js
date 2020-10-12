@@ -1,39 +1,43 @@
-import React, { useState } from 'react';
-import Scrollspy from 'react-scrollspy';
+import React, { useState } from 'react'
+import Scrollspy from 'react-scrollspy'
 
 const Navbar = ({ activeSection, setActiveSection }) => {
-  const [navActive, setNavActive] = useState(false);
+  const [navActive, setNavActive] = useState(false)
 
-  const toggleNav = () => setNavActive(!navActive);
+  const toggleNav = () => setNavActive(!navActive)
 
   return (
     <nav className={!navActive ? 'navbar' : 'navbar navbar-active'}>
       <div className='navbar__content'>
-        <img src={require('./logo.svg')} alt='Logo' className='navbar__logo' />
+        <a href='#header'>
+          <img
+            src={require('./logo.svg')}
+            alt='Logo'
+            className='navbar__logo'
+          />
+        </a>
         <Scrollspy
-            items={['header', 'portfolio', 'resume', 'contact']}
-            offset={ -80.4 }
-            onUpdate={(section) => {
-            if(typeof(section)  !== "undefined"){
+          items={['header', 'portfolio', 'resume', 'contact']}
+          offset={-80.4}
+          onUpdate={(section) => {
+            if (typeof section !== 'undefined') {
               if (section.id === 'header') {
-             setActiveSection(1);
+                setActiveSection(1)
               } else if (section.id === 'portfolio') {
-                setActiveSection(2);
+                setActiveSection(2)
               } else if (section.id === 'resume') {
-                setActiveSection(3);
+                setActiveSection(3)
               } else {
-                setActiveSection(4);
+                setActiveSection(4)
               }
             }
-               }}
-           
-          >
-        <ul
-          className={
-            !navActive ? 'navbar__list display-hidden-sm' : 'navbar__list'
-          }
+          }}
         >
-         
+          <ul
+            className={
+              !navActive ? 'navbar__list display-hidden-sm' : 'navbar__list'
+            }
+          >
             <li className='navbar__list-item' onClick={toggleNav}>
               <a
                 href='#header'
@@ -82,8 +86,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 Contact
               </a>
             </li>
-          
-        </ul>
+          </ul>
         </Scrollspy>
         <div
           className={
@@ -98,7 +101,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
         </div>
       </div>
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar
