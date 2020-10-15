@@ -18,7 +18,7 @@ html {
   font-size: 62.5%; // 10xp = 1rem
   font-family: 'Montserrat', sans-serif;
   color: var(--color-black);
-  scroll-behavior: smooth;
+  // scroll-behavior: smooth;
 
   @media only screen and (max-width: $bp-small) {
     font-size: 50%;
@@ -30,6 +30,8 @@ body::-webkit-scrollbar {
 body::selection {
   background: pink;
   color: yellow;
+}
+body {
 }
 .App {
   display: grid;
@@ -90,4 +92,8 @@ body::selection {
 
 .display-hidden {
   display: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }

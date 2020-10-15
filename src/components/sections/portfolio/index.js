@@ -26,8 +26,9 @@ const Portfolio = ({ portfolioItems }) => {
                   style={{ display: 'inline' }}
                   animateIn='fadeIn'
                   delay={animationsDelay}
+                  key={index}
                 >
-                  <PortfolioItem key={index} item={item} />
+                  <PortfolioItem item={item} />
                 </ScrollAnimation>
               )
             }

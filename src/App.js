@@ -43,30 +43,26 @@ function App() {
 
   return (
     <Router>
-      <ReactFullpage
-        render={() => (
-          <div className='App'>
-            <Navbar
+      <div className='App'>
+        <Navbar
+          activeSection={activeSection}
+          setActiveSection={setActiveSection}
+        />
+        <Switch>
+          <Route path='/' exact>
+            <Home
+              portfolioItems={portfolioItems}
+              resume={resume}
               activeSection={activeSection}
               setActiveSection={setActiveSection}
             />
-            <Switch>
-              <Route path='/' exact>
-                <Home
-                  portfolioItems={portfolioItems}
-                  resume={resume}
-                  activeSection={activeSection}
-                  setActiveSection={setActiveSection}
-                />
-              </Route>
-              <Route path='/portfolio' exact>
-                <PortfolioPage portfolioItems={portfolioItems} />
-              </Route>
-            </Switch>
-            <Footer />
-          </div>
-        )}
-      />
+          </Route>
+          <Route path='/portfolio' exact>
+            <PortfolioPage portfolioItems={portfolioItems} />
+          </Route>
+        </Switch>
+        <Footer />
+      </div>
     </Router>
   )
 }

@@ -9,8 +9,8 @@ const PortfolioPage = ({ history, portfolioItems }) => {
         &#8592; Go back
       </div>
       <div className='portfolio-page__container'>
-        {portfolioItems.map((item) => (
-          <PortfolioItem item={item} />
+        {portfolioItems.map((item, index) => (
+          <PortfolioItem item={item} key={index} />
         ))}
       </div>
     </div>
