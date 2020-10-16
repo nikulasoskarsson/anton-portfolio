@@ -10,8 +10,11 @@ import Navbar from './components/sections/header/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import PortfolioPage from './pages/PortfolioPage'
+import Scroll from 'react-scroll'
 
 function App() {
+  const Element = Scroll.Element
+
   const apiEndpoint = 'https://anton-portfolio.cdn.prismic.io/api/v2'
 
   const [portfolioItems, setPortfolioItems] = useState([])
@@ -43,7 +46,7 @@ function App() {
 
   return (
     <Router>
-      <div className='App'>
+      <Element className='App' id='container' name='container'>
         <Navbar
           activeSection={activeSection}
           setActiveSection={setActiveSection}
@@ -62,7 +65,7 @@ function App() {
           </Route>
         </Switch>
         <Footer />
-      </div>
+      </Element>
     </Router>
   )
 }

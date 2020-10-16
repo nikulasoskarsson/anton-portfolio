@@ -1,8 +1,10 @@
 import React, { useState } from 'react'
 import IconRight from './IconRight'
 import ScrollAnimation from 'react-animate-on-scroll'
+import Scroll from 'react-scroll'
 
 const Contact = () => {
+  const Element = Scroll.Element
   const [formData] = useState([
     {
       label: 'What is your name?',
@@ -60,7 +62,7 @@ const Contact = () => {
   }
 
   return (
-    <div className='contact section' id='contact'>
+    <Element className='contact section' id='contact' name='contact'>
       <h1 className='heading-h1'>
         <ScrollAnimation animateIn='fadeIn'>
           Got a project, or do you just want to say hi?
@@ -135,7 +137,7 @@ const Contact = () => {
           {formPlacement === 3 && <button class='button'>Send</button>}
         </form>
       </ScrollAnimation>
-    </div>
+    </Element>
   )
 }
 
