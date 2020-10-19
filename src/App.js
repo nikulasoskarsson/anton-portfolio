@@ -15,7 +15,7 @@ import Scroll from 'react-scroll'
 function App() {
   const Element = Scroll.Element
 
-  const apiEndpoint = 'https://anton-portfolio.cdn.prismic.io/api/v2'
+  const apiEndpoint = 'https://kaernestaed.cdn.prismic.io/api/v2'
 
   const [portfolioItems, setPortfolioItems] = useState([])
   const [resume, setResume] = useState({})
@@ -29,11 +29,11 @@ function App() {
         })
         .then(
           function (response) {
-            setPortfolioItems(response.results[2].data.portfolio_item)
+            setPortfolioItems(response.results[0].data.portfolio_items)
             setResume({
               ...resume,
-              img: response.results[2].data.resume_image,
-              link: response.results[2].data.resume_link,
+              img: response.results[0].data.resume_image,
+              link: response.results[0].data.resume_link,
             })
           },
           function (err) {

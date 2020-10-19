@@ -15,35 +15,25 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   const [scrollTop, setScrollTop] = useState(window.pageYOffset)
   const [isScrollLocked, setIsScrollLocked] = useState(false)
 
-  const handleScroll = (section, isScrollLocked, handler) => {
-    if (!isScrollLocked) {
-      document.getElementById(section).scrollIntoView()
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!isScrollLocked) {
+  //       // document.getElementById(nextSection).scrollIntoView()
+  //       window.location.replace(`/#${nextSection}`)
+  //       document.querySelector('body').classList.add('overflow-hidden')
 
-      // window.scrollBy(0, window.innerHeight * 2)
-      document.querySelector('body').classList.add('overflow-hidden')
+  //       setIsScrollLocked(true)
+  //       setTimeout(() => {
+  //         document.querySelector('body').classList.remove('overflow-hidden')
+  //         setIsScrollLocked(false)
+  //       }, 1500)
+  //     }
+  //   }
 
-      setIsScrollLocked(true)
-      document.removeEventListener('scroll', handler)
-      setTimeout(() => {
-        // document.querySelector('body').classList.remove('overflow-hidden')
-        // setIsScrollLocked(false)
-      }, 1500)
-    }
-  }
+  //   document.addEventListener('scroll', handleScroll)
 
-  useEffect(() => {
-    // Either one of those will scroll to the desired location
-    // document.getElementById('portfolio').scrollIntoView()
-
-    // // window.scrollBy(0, window.innerHeight * 2)
-    // document.querySelector('body').classList.add('overflow-hidden')
-
-    const handler = (e) => handleScroll(nextSection, isScrollLocked, handler)
-    document.addEventListener('scroll', handler)
-
-    // // cleanup callback, that will be called before the effect runs again
-    //  return () => document.removeEventListener('scroll', handler)
-  }, [nextSection, isScrollLocked])
+  //   return () => document.removeEventListener('scroll', handleScroll)
+  // }, [nextSection, isScrollLocked])
 
   return (
     <nav className={!navActive ? 'navbar' : 'navbar navbar-active'}>
