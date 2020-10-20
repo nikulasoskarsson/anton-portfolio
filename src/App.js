@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Prismic from 'prismic-javascript'
-import ReactFullpage from '@fullpage/react-fullpage'
 import 'animate.css/animate.min.css'
 
 import './App.scss'
@@ -10,11 +9,8 @@ import Navbar from './components/sections/header/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
 import PortfolioPage from './pages/PortfolioPage'
-import Scroll from 'react-scroll'
 
 function App() {
-  const Element = Scroll.Element
-
   const apiEndpoint = 'https://kaernestaed.cdn.prismic.io/api/v2'
 
   const [portfolioItems, setPortfolioItems] = useState([])
@@ -46,7 +42,7 @@ function App() {
 
   return (
     <Router>
-      <Element className='App' id='container' name='container'>
+      <div className='App' id='container' name='container'>
         <Navbar
           activeSection={activeSection}
           setActiveSection={setActiveSection}
@@ -65,7 +61,7 @@ function App() {
           </Route>
         </Switch>
         <Footer />
-      </Element>
+      </div>
     </Router>
   )
 }

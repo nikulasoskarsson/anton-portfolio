@@ -42,7 +42,7 @@ const Portfolio = ({ portfolioItems }) => {
           onClick={toggleExpandSection}
           className='portfolio__button'
         >
-          <Link to='/portfolio'>
+          <Link className='link' to='/portfolio'>
             See more <DribbleIcon />
           </Link>
         </ScrollAnimation>

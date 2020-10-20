@@ -1,19 +1,17 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Scrollspy from 'react-scrollspy'
-import Scroll from 'react-scroll'
 
 const Navbar = ({ activeSection, setActiveSection }) => {
-  const scroller = Scroll.scroller
   const [navActive, setNavActive] = useState(false)
 
   const toggleNav = () => setNavActive(!navActive)
 
-  const [currentSection, setCurrentSection] = useState('header')
-  const [nextSection, setNextSection] = useState('portfolio')
-  const [previousSection, setPreviousSection] = useState('header')
+  // const [currentSection, setCurrentSection] = useState('header')
+  // const [nextSection, setNextSection] = useState('portfolio')
+  // const [previousSection, setPreviousSection] = useState('header')
 
-  const [scrollTop, setScrollTop] = useState(window.pageYOffset)
-  const [isScrollLocked, setIsScrollLocked] = useState(false)
+  // const [scrollTop, setScrollTop] = useState(window.pageYOffset)
+  // const [isScrollLocked, setIsScrollLocked] = useState(false)
 
   // useEffect(() => {
   //   const handleScroll = () => {
@@ -50,21 +48,31 @@ const Navbar = ({ activeSection, setActiveSection }) => {
           offset={-80.4}
           onUpdate={(section) => {
             if (typeof section !== 'undefined') {
-              setCurrentSection(section.id)
+              {
+                /* setCurrentSection(section.id) */
+              }
               if (section.id === 'header') {
                 setActiveSection(1)
-                setNextSection('portfolio')
+                {
+                  /* setNextSection('portfolio') */
+                }
               } else if (section.id === 'portfolio') {
                 setActiveSection(2)
-                setPreviousSection('header')
-                setNextSection('resume')
+                {
+                  /* setPreviousSection('header')
+                setNextSection('resume') */
+                }
               } else if (section.id === 'resume') {
                 setActiveSection(3)
-                setPreviousSection('portfolio')
-                setNextSection('contact')
+                {
+                  /* setPreviousSection('portfolio')
+                setNextSection('contact') */
+                }
               } else {
                 setActiveSection(4)
-                setPreviousSection('resume')
+                {
+                  /* setPreviousSection('resume') */
+                }
               }
             }
           }}

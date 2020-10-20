@@ -4,7 +4,7 @@
 
   display: flex;
   align-items: center;
-  justify-content: space-between;
+
 
   &__container {
     display: flex;
@@ -41,19 +41,33 @@
     font-size: 1.3rem;
     cursor: pointer;
     padding: 1.5rem;
-
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+    
+  .link{
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      color:var(--color-black);
+    }
+    path{
+      fill:var(--color-black);
+    }
+    &:hover{
+      .link{
+        color:#EA4C89;
+      }
+      path{
+        fill:#EA4C89 !important;
+      }
+    }
   }
 }
 
 .project {
   margin: 0 1.5rem;
-
   transition: transform 0.3s;
-
-  @media only screen and (max-width: $bp-large) {
+ 
+@media only screen and (max-width: $bp-large) {
     margin: 0 0.5rem;
   }
 
@@ -62,14 +76,13 @@
   &__image {
     object-fit: cover;
     height: 28rem;
-    width: 24rem;
+    width: 90%;
+    border:1.3rem solid #fff;
+    box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.1);
 
-    @media only screen and (max-width: $bp-large) {
-      width: 18rem;
-    }
-
+  
     @media only screen and (max-width: $bp-medium) {
-      width: 60%;
+      width: 40vw;
       float: right;
     }
 

@@ -1,6 +1,8 @@
 .portfolio-page {
   width: 100%;
   grid-column: navigation-start / navigation-end;
+  grid-row:content-start / content-end;
+
 
   &__button {
     display: flex;
@@ -10,9 +12,19 @@
     align-items: center;
   }
   &__container {
-    grid-column: content-start / content-end;
+    margin-top:2rem;
+    padding:0 4rem;
     display: grid;
-    grid-template-columns: repeat(4, minmax(28rem, 1fr));
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(4,  1fr);
+
+    gap:30px;
+  }
+
+  &-item{
+    img{
+      border:1.3rem solid #fff;
+      width:100%;
+      height:auto;
+    }
   }
 }
