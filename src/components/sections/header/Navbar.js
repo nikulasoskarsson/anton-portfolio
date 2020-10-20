@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Scrollspy from 'react-scrollspy'
+import { HashLink as Link } from 'react-router-hash-link'
 
 const Navbar = ({ activeSection, setActiveSection }) => {
   const [navActive, setNavActive] = useState(false)
@@ -36,20 +37,20 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   return (
     <nav className={!navActive ? 'navbar' : 'navbar navbar-active'}>
       <div className='navbar__content'>
-        <a href='#header'>
+        <Link to='/#header'>
           <img
             src={require('./logo.svg')}
             alt='Logo'
             className='navbar__logo'
           />
-        </a>
+        </Link>
         <Scrollspy
           items={['header', 'portfolio', 'resume', 'contact']}
           offset={-80.4}
           onUpdate={(section) => {
             if (typeof section !== 'undefined') {
               if (section.id === 'header') {
-                setActiveSection(2)
+                setActiveSection(1)
               } else if (section.id === 'portfolio') {
                 setActiveSection(2)
               } else if (section.id === 'resume') {
@@ -66,8 +67,8 @@ const Navbar = ({ activeSection, setActiveSection }) => {
             }
           >
             <li className='navbar__list-item' onClick={toggleNav}>
-              <a
-                href='#header'
+              <Link
+                to='/#header'
                 className={
                   activeSection === 1
                     ? 'navbar__link navbar__link-active'
@@ -75,11 +76,11 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 }
               >
                 About me
-              </a>
+              </Link>
             </li>
             <li className='navbar__list-item' onClick={toggleNav}>
-              <a
-                href='#portfolio'
+              <Link
+                to='/#portfolio'
                 className={
                   activeSection === 2
                     ? 'navbar__link navbar__link-active'
@@ -87,11 +88,11 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 }
               >
                 Projects
-              </a>
+              </Link>
             </li>
             <li className='navbar__list-item' onClick={toggleNav}>
-              <a
-                href='#resume'
+              <Link
+                to='/#resume'
                 className={
                   activeSection === 3
                     ? 'navbar__link navbar__link-active'
@@ -99,11 +100,11 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 }
               >
                 Resume
-              </a>
+              </Link>
             </li>
             <li className='navbar__list-item' onClick={toggleNav}>
-              <a
-                href='#contact'
+              <Link
+                to='/#contact'
                 className={
                   activeSection === 4
                     ? 'navbar__link navbar__link-active'
@@ -111,7 +112,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
                 }
               >
                 Contact
-              </a>
+              </Link>
             </li>
           </ul>
         </Scrollspy>
