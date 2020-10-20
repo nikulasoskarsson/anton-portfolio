@@ -48,31 +48,14 @@ const Navbar = ({ activeSection, setActiveSection }) => {
           offset={-80.4}
           onUpdate={(section) => {
             if (typeof section !== 'undefined') {
-              {
-                /* setCurrentSection(section.id) */
-              }
               if (section.id === 'header') {
-                setActiveSection(1)
-                {
-                  /* setNextSection('portfolio') */
-                }
+                setActiveSection(2)
               } else if (section.id === 'portfolio') {
                 setActiveSection(2)
-                {
-                  /* setPreviousSection('header')
-                setNextSection('resume') */
-                }
               } else if (section.id === 'resume') {
                 setActiveSection(3)
-                {
-                  /* setPreviousSection('portfolio')
-                setNextSection('contact') */
-                }
               } else {
                 setActiveSection(4)
-                {
-                  /* setPreviousSection('resume') */
-                }
               }
             }
           }}

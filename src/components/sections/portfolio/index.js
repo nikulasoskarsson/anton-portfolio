@@ -18,7 +18,7 @@ const Portfolio = ({ portfolioItems }) => {
       </h1>
       <div className='portfolio__container'>
         {portfolioItems.length ? (
-          portfolioItems.map((item, index) => {
+          portfolioItems.forEach((item, index) => {
             if (index <= 2) {
               animationsDelay = animationsDelay - 150
               return (
