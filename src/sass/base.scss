@@ -18,7 +18,7 @@ html {
   font-size: 62.5%; // 10xp = 1rem
   font-family: 'Montserrat', sans-serif;
   color: var(--color-black);
-  // scroll-behavior: smooth;
+   scroll-behavior: smooth;
 
   @media only screen and (max-width: $bp-small) {
     font-size: 50%;
@@ -32,7 +32,7 @@ body::selection {
   color: yellow;
 }
 body {
-  scroll-behavior: smooth;
+ 
   background:#f4f4f4;
 }
 .App {
@@ -63,6 +63,9 @@ body {
     [full-end];
 
     grid-template-rows: [navbar-start]8.4rem [navbar-end content-start]min-content [content-end footer-start] 4.2rem [footer-end];
+
+    @media only screen and (max-width: $bp-small) {
+      padding: 0 2rem;}
 }
 
 .scroll-position {
