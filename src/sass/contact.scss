@@ -16,7 +16,8 @@
   }
 
   &__form {
-    width: 40rem;
+    width:26vw;
+    min-width: 35rem;
     position: relative;
 
     input{
@@ -70,13 +71,17 @@
 
   .button {
     text-transform: uppercase;
-    width: 100%;
-    position: absolute;
-    bottom: -5rem;
-    left: 0;
+   position: absolute;
+   top:0;
+   right:0;
+  
     @media only screen and (max-width: $bp-small) {
       padding: 2rem 0;
       bottom: -8rem;
+      width: 100%;
+      
+     
+      left: 0;
     }
   }
 

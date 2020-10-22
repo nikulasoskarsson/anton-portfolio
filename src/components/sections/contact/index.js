@@ -83,10 +83,12 @@ const Contact = () => {
             htmlFor={formData[formPlacement].for}
           >
             {formData[formPlacement].label}
-            {formPlacement < 3 && (
+            {formPlacement < 3 ? (
               <div onClick={handleFormChange}>
                 <IconRight />
               </div>
+            ) : (
+              <button class='button'>Send</button>
             )}
           </label>
           <input
@@ -134,7 +136,6 @@ const Contact = () => {
           <p className='contact__form-placement'>
             {formData[formPlacement].placement} / 4
           </p>
-          {formPlacement === 3 && <button class='button'>Send</button>}
         </form>
       </ScrollAnimation>
     </Element>

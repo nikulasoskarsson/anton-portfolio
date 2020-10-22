@@ -11,17 +11,25 @@
     span{
       color:var(--color-black);
     }
+
+    @media only screen and (max-width: $bp-medium) {
+      width:100%;
+    }
   }
 
-  @media only screen and (max-width: $bp-small) {
+  @media only screen and (max-width: $bp-medium) {
     flex-direction: column;
     justify-content: center;
     align-items: start;
+    &__image-container {
+      align-self: center;
+    }
+    
+  }
+  @media only screen and (max-width:$bp-small){
     grid-column: full-start / full-end;
   }
-  img {
-    align-self: center;
-  }
+ 
   &__dropdown {
     position: absolute;
     bottom: 2rem;

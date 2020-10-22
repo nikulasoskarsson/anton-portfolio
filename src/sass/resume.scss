@@ -5,41 +5,55 @@
   align-items: center;
   position: relative;
 
+  @media only screen and (max-width: $bp-medium) {
+    padding-top: 28rem;
+  }
+
   @media only screen and (max-width: $bp-small) {
     grid-column: full-start / full-end;
-    padding-top: 8rem;
     flex-direction: column;
   }
 
   &__left {
     width: 60%;
+
     @media only screen and (max-width: $bp-small) {
       width: 80%;
       align-self: flex-start;
     }
+
     h1 {
       width: 100%;
       padding-bottom: 3rem;
     }
   }
+
   &__right {
     width: 40%;
-  
+
     @media only screen and (max-width: $bp-small) {
       padding-top: 2rem;
       width: 40rem;
       align-self: center;
     }
+
     @media only screen and (max-width: $bp-smallest) {
       padding-top: 2rem;
       max-width: 30rem;
       min-width: 80%;
       align-self: center;
     }
+
     img {
-     float:right;
-      max-height:55rem;
+      float: right;
+      height: 40vw;
+      min-height: 25rem;
       box-shadow: 0px 24px 40px rgba(0, 0, 0, 0.1);
+
+      @media only screen and(max-width: $bp-small) {
+        height: 80vw !important;
+        float: none;
+      }
     }
   }
 }

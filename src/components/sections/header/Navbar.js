@@ -37,7 +37,7 @@ const Navbar = ({ activeSection, setActiveSection }) => {
   return (
     <nav className={!navActive ? 'navbar' : 'navbar navbar-active'}>
       <div className='navbar__content'>
-        <Link to='/#header'>
+        <Link to='/#header' className='navbar__logo-link'>
           <img
             src={require('./logo.svg')}
             alt='Logo'

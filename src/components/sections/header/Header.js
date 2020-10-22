@@ -11,7 +11,11 @@ const Header = () => {
           minimalistic products on the internet
         </h1>
       </ScrollAnimation>
-      <ScrollAnimation delay={500} animateIn='fadeIn'>
+      <ScrollAnimation
+        className='header__image-container'
+        delay={500}
+        animateIn='fadeIn'
+      >
         <img style={{ width: '300px' }} src={require('./video.gif')} alt='' />
       </ScrollAnimation>
       <DropdownIcon />
