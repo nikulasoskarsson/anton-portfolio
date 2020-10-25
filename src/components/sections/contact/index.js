@@ -69,7 +69,11 @@ const Contact = () => {
         </ScrollAnimation>
       </h1>
 
-      <ScrollAnimation animateIn='fadeIn' delay={500}>
+      <ScrollAnimation
+        animateIn='fadeIn'
+        delay={500}
+        className='contact__form-container'
+      >
         <form
           className='contact__form'
           id='contact-form'

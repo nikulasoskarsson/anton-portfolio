@@ -10,15 +10,27 @@
 
   h1 {
     width: 60%;
-    @media only screen and (max-width: $bp-small) {
-      width: 80%;
-    }
+
+
+
+   
+  }
+&__form-container{
+
+
+  
+  @media only screen and (max-width: $bp-small) {
+ 
+    width: 100%;
   }
 
+}
   &__form {
-    width:26vw;
-    min-width: 35rem;
+    width:100%;
+   
     position: relative;
+
+   
 
     input{
       background: #f4f4f4;
