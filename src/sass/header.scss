@@ -29,6 +29,7 @@
   }
   @media only screen and (max-width:$bp-small){
     grid-column: full-start / full-end;
+    justify-content: center;
   }
  
   &__dropdown {
