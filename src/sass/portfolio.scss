@@ -13,7 +13,8 @@
   }
   @media only screen and (max-width: $bp-small) {
     align-items: center;
-  
+    grid-column: full-start / full-end;
+ 
    }
 
   &__container {
@@ -30,9 +31,7 @@
     @media only screen and (max-width: $bp-small) {
       align-items: center;
       flex-direction: column;
-      justify-content: center;
-      grid-column: full-start / full-end;
-    
+      justify-content: center;  
     }
   }
 
@@ -44,6 +43,7 @@
     @media only screen and (max-width: $bp-small) {
       padding-top: 8.4rem;
       padding-bottom: 4rem;
+      align-self: start;
     }
   }
 

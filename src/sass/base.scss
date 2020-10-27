@@ -57,7 +57,7 @@ body {
 
     grid-template-rows:
       [navbar-start]8.4rem [navbar-end header-start]100vh
-      [header-end portfolio-start] min-content [portfolio-end resume-start] min-content [resume-end contact-start] 100vh [contact-end footer-start] 4.2rem[footer-end];
+      [header-end portfolio-start] min-content [portfolio-end section-break-1-start] 4rem [section-break-1-end resume-start] min-content [resume-end contact-start] 100vh [contact-end footer-start] 4.2rem[footer-end];
   }
 }
 
