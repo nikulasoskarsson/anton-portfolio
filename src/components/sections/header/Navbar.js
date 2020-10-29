@@ -1,11 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Scrollspy from 'react-scrollspy'
 import { HashLink as Link } from 'react-router-hash-link'
 
 const Navbar = ({ activeSection, setActiveSection }) => {
   const [navActive, setNavActive] = useState(false)
 
-  const toggleNav = () => setNavActive(!navActive)
+  const toggleNav = () => {
+    window.innerWidth <= 600 && setNavActive(!navActive)
+  }
 
   // const [currentSection, setCurrentSection] = useState('header')
   // const [nextSection, setNextSection] = useState('portfolio')
