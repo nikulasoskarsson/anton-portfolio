@@ -82,60 +82,56 @@ const Contact = () => {
           data-netlify='true'
         >
           <input type='hidden' value='contact-us' name='form-name' />
-          <label
-            className='contact__label'
-            htmlFor={formData[formPlacement].for}
-          >
-            {formData[formPlacement].label}
+          <div className='contact__form-input-container contact-border'>
+            <input
+              placeholder={formData[formPlacement].label}
+              type='text'
+              id='name'
+              name='name'
+              className={
+                formData[formPlacement].for === 'name' ? '' : 'display-hidden'
+              }
+            />
+            <input
+              placeholder={formData[formPlacement].label}
+              type='text'
+              id='email'
+              name='email'
+              className={
+                formData[formPlacement].for === 'email' ? '' : 'display-hidden'
+              }
+            />
+            <input
+              placeholder={formData[formPlacement].label}
+              type='text'
+              id='subject'
+              name='subject'
+              className={
+                formData[formPlacement].for === 'subject'
+                  ? ''
+                  : 'display-hidden'
+              }
+            />
+
+            <input
+              placeholder={formData[formPlacement].label}
+              type='text'
+              id='message'
+              name='message'
+              className={
+                formData[formPlacement].for === 'message'
+                  ? ''
+                  : 'display-hidden'
+              }
+            />
             {formPlacement < 3 ? (
-              <div onClick={handleFormChange}>
+              <div className='contact__form-icon' onClick={handleFormChange}>
                 <IconRight />
               </div>
             ) : (
               <button class='button'>Send</button>
             )}
-          </label>
-          <input
-            type='text'
-            id='name'
-            name='name'
-            className={
-              formData[formPlacement].for === 'name'
-                ? 'contact__border'
-                : 'display-hidden'
-            }
-          />
-          <input
-            type='text'
-            id='email'
-            name='email'
-            className={
-              formData[formPlacement].for === 'email'
-                ? 'contact__border'
-                : 'display-hidden'
-            }
-          />
-          <input
-            type='text'
-            id='subject'
-            name='subject'
-            className={
-              formData[formPlacement].for === 'subject'
-                ? 'contact__border'
-                : 'display-hidden'
-            }
-          />
-
-          <input
-            type='text'
-            id='message'
-            name='message'
-            className={
-              formData[formPlacement].for === 'message'
-                ? 'contact__border'
-                : 'display-hidden'
-            }
-          />
+          </div>
           {error && <p className='contact__error'>{error}</p>}
           <p className='contact__form-placement'>
             {formData[formPlacement].placement} / 4
