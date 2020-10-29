@@ -23,12 +23,6 @@ const PortfolioPage = ({ portfolioItems, history }) => {
         {portfolioItems.map((item, index) => (
           <PortfolioPageItem item={item} key={index} />
         ))}
-        {portfolioItems.map((item, index) => (
-          <PortfolioPageItem item={item} key={index} />
-        ))}
-        {portfolioItems.map((item, index) => (
-          <PortfolioPageItem item={item} key={index} />
-        ))}
       </div>
     </div>
   )
